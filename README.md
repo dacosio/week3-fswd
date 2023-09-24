@@ -32,14 +32,14 @@ This readme provides a step-by-step guide on how to implement the requested feat
 
 - [x] **Create a new page to view completed tasks, re-activate a task, and completely remove a task:** On the '/completed' route, create a new page that allows users to view completed tasks. Provide options to re-activate a completed task and permanently remove a task.
 
-- [ ] **Follow the Data Stream through the App and Modify the current App to handle this field:** Update the App component to handle the new 'status' field in tasks appropriately. Ensure that tasks are added, modified, and completed without deleting completed tasks.
+- [x] **Follow the Data Stream through the App and Modify the current App to handle this field:** Update the App component to handle the new 'status' field in tasks appropriately. Ensure that tasks are added, modified, and completed without deleting completed tasks.
 
 - [x] **Ensure that this new functionality operates independently of the Task Viewer/Adder Route:** Make sure that the new functionality for handling completed tasks does not interfere with the Task Viewer/Adder Route. The Task Viewer/Adder Route should remain functional.
 
-- [ ] **Add a Link in the footer to navigate to this Route:** In your app's footer, add a link that allows users to navigate to the '/completed' route. This link should be easily accessible to users.
+- [x] **Add a Link in the footer to navigate to this Route:** In your app's footer, add a link that allows users to navigate to the '/completed' route. This link should be easily accessible to users.
 
-- [ ] **Use the Predefined Classes and CSS to style the page to look unified:** Apply consistent styling to the '/completed' page using predefined CSS classes or styles to ensure a cohesive design.
+- [x] **Use the Predefined Classes and CSS to style the page to look unified:** Apply consistent styling to the '/completed' page using predefined CSS classes or styles to ensure a cohesive design.
 
 - [x] **Keep the X, but also add a "check" (non-functional) to show that the task has been completed:** On the Task Viewer page, keep the 'X' button to delete tasks permanently. Additionally, add a non-functional "check" icon or indicator to show that a task has been completed. This icon should be placed near the 'X' button.
 
-- [ ] **Find a third icon (maybe like a circular arrow) to indicate re-activation:** Choose a third icon, such as a circular arrow, to indicate the re-activation of completed tasks.
+- [x] **Find a third icon (maybe like a circular arrow) to indicate re-activation:** Choose a third icon, such as a circular arrow, to indicate the re-activation of completed tasks.
