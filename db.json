@@ -14,6 +14,12 @@
       "reminder": false,
       "id": 2,
       "isCompleted": false
+    },
+    {
+      "text": "day 1",
+      "day": "day 2",
+      "reminder": false,
+      "id": 3
     }
   ]
 }
