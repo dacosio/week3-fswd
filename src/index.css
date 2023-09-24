@@ -124,3 +124,8 @@ a {
   justify-content: center;
   gap: 0.5rem;
 }
+
+/* Add hover color for links */
+.header .header__nav a:hover {
+  color: steelblue; /* Change to the color you prefer on hover */
+}
