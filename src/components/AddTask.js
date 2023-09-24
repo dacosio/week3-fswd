@@ -1,11 +1,15 @@
 const AddTask = ({
   onAdd,
+  onUpdate,
   text,
   day,
   reminder,
   setText,
   setDay,
   setReminder,
+  isUpdating,
+  taskId,
+  setTaskId,
 }) => {
   const onSubmit = (e) => {
     e.preventDefault();
@@ -14,8 +18,8 @@ const AddTask = ({
       alert("Please add a task");
       return;
     }
-
-    onAdd({ text, day, reminder });
+    if (isUpdating) onUpdate({ taskId, text, day, reminder });
+    else onAdd({ text, day, reminder });
 
     setText("");
     setDay("");
@@ -52,7 +56,11 @@ const AddTask = ({
         />
       </div>
 
-      <input type="submit" value="Save Task" className="btn btn-block" />
+      <input
+        type="submit"
+        value={isUpdating ? "Update Task" : "Add Task"}
+        className="btn btn-block"
+      />
     </form>
   );
 };

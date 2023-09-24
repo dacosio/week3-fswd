@@ -11,6 +11,7 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
   const [complete, setComplete] = useState(false);
 
+  const [taskId, setTaskId] = useState(0);
   const [text, setText] = useState("");
   const [day, setDay] = useState("");
   const [reminder, setReminder] = useState(false);
@@ -49,18 +50,36 @@ const App = () => {
   };
 
   // Add Task
-  const addTask = async (task) => {
+  const addTask = async (payload) => {
     const res = await fetch("http://localhost:5000/tasks", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify(task),
+      body: JSON.stringify(payload),
     });
 
     const data = await res.json();
 
     setTasks([...tasks, data]);
+  };
+
+  const updateTask = async (payload) => {
+    const taskToUpdate = await fetchTask(payload.taskId);
+    const updatedTask = { ...taskToUpdate, ...payload };
+    const res = await fetch(`http://localhost:5000/tasks/${payload.taskId}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(updatedTask),
+    });
+    const data = await res.json();
+    setTasks(
+      tasks.map((task) =>
+        task.id === payload.taskId ? { ...task, ...data } : task
+      )
+    );
   };
 
   // Delete Task
@@ -122,6 +141,7 @@ const App = () => {
   };
 
   const onUpdate = (task) => {
+    setTaskId(task.id);
     setText(task.text);
     setDay(task.day);
     setReminder(task.reminder);
@@ -136,6 +156,7 @@ const App = () => {
           setText("");
           setDay("");
           setReminder(false);
+          setIsUpdating(false);
         }}
         showAdd={showAddTask}
       />
@@ -147,6 +168,7 @@ const App = () => {
               {showAddTask && (
                 <AddTask
                   onAdd={addTask}
+                  onUpdate={updateTask}
                   text={text}
                   day={day}
                   reminder={reminder}
@@ -154,6 +176,8 @@ const App = () => {
                   setDay={setDay}
                   setText={setText}
                   isUpdating={isUpdating}
+                  setTaskId={setTaskId}
+                  taskId={taskId}
                 />
               )}
               {tasks.length > 0 ? (
