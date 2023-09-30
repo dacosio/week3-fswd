@@ -125,6 +125,14 @@ a {
   gap: 0.5rem;
 }
 
+.tab {
+  color: black;
+}
+
+.tab.active {
+  text-decoration: underline;
+}
+
 /* Add hover color for links */
 .header .header__nav a:hover {
   color: steelblue; /* Change to the color you prefer on hover */
