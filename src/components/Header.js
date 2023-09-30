@@ -5,6 +5,10 @@ import Button from "./Button";
 const Header = ({ title, onAdd, showAdd }) => {
   const location = useLocation();
 
+  const active = (pathname) => {
+    return location.pathname === `/${pathname}` ? " active" : "";
+  };
+
   return (
     <header className="header">
       <div className="header__top">
@@ -18,9 +22,15 @@ const Header = ({ title, onAdd, showAdd }) => {
         )}
       </div>
       <div className="header__nav">
-        <Link to="/">Home</Link>
-        <Link to="/completed">Completed</Link>
-        <Link to="/about">About</Link>
+        <Link to="/" className={`tab${active("")}`}>
+          Home
+        </Link>
+        <Link to="/completed" className={`tab${active("completed")}`}>
+          Completed
+        </Link>
+        <Link to="/about" className={`tab${active("about")}`}>
+          About
+        </Link>
       </div>
     </header>
   );
