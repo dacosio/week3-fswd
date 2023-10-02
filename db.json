@@ -5,15 +5,16 @@
       "day": "Sep 27, 2023 4:30 PM",
       "reminder": true,
       "id": 1,
-      "isCompleted": false,
+      "isCompleted": true,
       "taskId": 1
     },
     {
       "text": "Week 2 - Task List",
       "day": "Sep 28, 2023 4:30 PM",
-      "reminder": false,
+      "reminder": true,
       "id": 2,
-      "isCompleted": false
+      "isCompleted": false,
+      "taskId": 2
     },
     {
       "text": "day 1",
