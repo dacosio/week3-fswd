@@ -1,26 +1,19 @@
 {
   "tasks": [
     {
-      "text": "Week 2 React Course Submission",
+      "text": "assfweqqq",
       "day": "Sep 27, 2023 4:30 PM",
-      "reminder": true,
+      "reminder": false,
       "id": 1,
-      "isCompleted": true,
+      "isCompleted": false,
       "taskId": 1
     },
     {
       "text": "Week 2 - Task List",
       "day": "Sep 28, 2023 4:30 PM",
-      "reminder": true,
-      "id": 2,
-      "isCompleted": false,
-      "taskId": 2
-    },
-    {
-      "text": "day 1",
-      "day": "day 2",
       "reminder": false,
-      "id": 3
+      "id": 2,
+      "isCompleted": false
     }
   ]
 }

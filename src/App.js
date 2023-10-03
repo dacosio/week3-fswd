@@ -55,7 +55,7 @@ const App = () => {
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({ ...payload, isCompleted: false }),
     });
 
     const data = await res.json();
